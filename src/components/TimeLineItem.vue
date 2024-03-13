@@ -1,53 +1,109 @@
 <script setup>
-  const props = defineProps({
-    time: {
-      type: String,
-      required: true,
-    },
-    heading: {
-      type: String,
-      required: true,
-    },
-    location: {
-      type: String,
-      required: true,
-    },
-    locationLink: {
-      type: String,
-      required: true,
-    },
-  })
+import MoreIcon from "@/components/icons/MoreIcon.vue";
+import {ref} from "vue";
+import Badge from "@/components/Badge.vue";
+
+const props = defineProps({
+  time: {
+    type: String,
+    required: true,
+  },
+  heading: {
+    type: String,
+    required: true,
+  },
+  location: {
+    type: String,
+    required: true,
+  },
+  locationLink: {
+    type: String,
+    required: true,
+  },
+  extraInformation: {
+    type: Array,
+    required: false,
+  },
+  skills: {
+    type: Array,
+    required: false,
+  },
+})
+
+const expand = ref(false);
+
+
 </script>
 
 <template>
-  <div class="main-container">
+  <div class="main-container" @click="()=>expand = !expand">
+    <div>
+      <div class="heading"> {{ props.heading }}</div>
+      <div class="expanded-section" :class="{'expanded-section-active':expand}">
+        <p v-for="info in props.extraInformation" :key="info">
+          {{ info }}
+        </p>
+      </div>
+      <div>
+        <badge v-for="skill in props.skills" :content="skill" :key="skill" size="small"></badge>
 
-  <div>
-    <div class="heading"> {{props.heading}}</div>
-    <a :href="props.locationLink" target="_blank"> {{props.location}}</a>
-  </div>
-  <div>
-    <div>{{props.time}}</div>
-  </div>
+      </div>
+      <a :href="props.locationLink" target="_blank"> {{ props.location }}</a>
+    </div>
+    <div class="time-container">
+      <div>{{ props.time }}</div>
+    </div>
+    <div class="expand-icon" v-if="!!props.extraInformation?.length">
+      <MoreIcon/>
+    </div>
   </div>
 </template>
 
 <style scoped>
-  .main-container{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid var(--color-border);
-    padding: 5px 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  .heading{
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 0.4rem;
-    color: var(--color-heading);
-  }
-  a{
-    font-style: italic;
-  }
+.main-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--color-border);
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.heading {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--color-heading);
+}
+
+a {
+  font-style: italic;
+}
+
+.expand-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+}
+
+.time-container {
+  min-width: 140px;
+}
+
+.expanded-section {
+  max-height: 0;
+  overflow: hidden; /* Changed from visibility */
+  transition: max-height 0.5s;
+}
+
+.expanded-section-active {
+  max-height: 400px;  /* Set an appropriate maximum height here */
+}
+
+p{
+  margin-bottom: 5px;
+
+}
 </style>
