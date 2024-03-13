@@ -16,7 +16,7 @@ import ProfilePresentation from "@/components/ProfilePresentation.vue";
     <TheWelcome/>
   </main>
 
-  <a href="../public/Miguel-Monteiro-Claveri_resume.pdf" target="_blank" class="pdf-button">Download PDF version</a>
+  <a href="/assets/Miguel-Monteiro-Claveri_resume.pdf" target="_blank" class="pdf-button">Download PDF version</a>
 </template>
 
 <style scoped>
