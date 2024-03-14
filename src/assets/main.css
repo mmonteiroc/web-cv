@@ -42,3 +42,23 @@ a {
     padding: 0 2rem;
   }
 }
+
+/* General Rule for Thin Scrollbars */
+* {
+  scrollbar-width: thin;       /* Control scrollbar track width */
+  scrollbar-color: #C0C0C0 #F0F0F0; /* Thumb color, track color */
+}
+
+/* Webkit Browsers (Chrome, Safari, Edge, etc.) */
+::-webkit-scrollbar {
+  width: 8px;  /* Adjust as desired */
+}
+
+::-webkit-scrollbar-track {
+  background: #F0F0F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #C0C0C0;
+  border-radius: 10px; /* Optional rounded corners */
+}
