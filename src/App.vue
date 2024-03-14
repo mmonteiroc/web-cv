@@ -38,6 +38,7 @@ header {
     max-height: 850px;
     overflow-y: auto;
     overflow-x: unset;
+    padding-right: 15px;
   }
 }
 
