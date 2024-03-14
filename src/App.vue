@@ -35,7 +35,7 @@ header {
 
 @media (min-width: 1026px) {
   main {
-    max-height: 950px;
+    max-height: 850px;
     overflow-y: auto;
     overflow-x: unset;
     direction: rtl;
