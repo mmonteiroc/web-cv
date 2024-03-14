@@ -37,21 +37,26 @@ const expand = ref(false);
 
 <template>
   <div class="main-container" @click="()=>expand = !expand">
-    <div>
-      <div class="heading"> {{ props.heading }}</div>
-      <div class="expanded-section" :class="{'expanded-section-active':expand}">
-        <p v-for="info in props.extraInformation" :key="info">
-          {{ info }}
-        </p>
+    <div class="heading">
+      {{ props.heading }}
+      <div class="time-container">
+        <div>{{ props.time }}</div>
       </div>
-      <div>
-        <badge v-for="skill in props.skills" :content="skill" :key="skill" size="small"></badge>
-
-      </div>
-      <a :href="props.locationLink" target="_blank"> {{ props.location }}</a>
     </div>
-    <div class="time-container">
-      <div>{{ props.time }}</div>
+
+
+    <div class="expanded-section" :class="{'expanded-section-active':expand}">
+      <p v-for="info in props.extraInformation" :key="info">
+        {{ info }}
+      </p>
+    </div>
+    <div>
+      <badge v-for="skill in props.skills" :content="skill" :key="skill" size="small"></badge>
+
+    </div>
+    <div>
+      <a :href="props.locationLink" target="_blank"> {{ props.location }}</a>
+
     </div>
     <div class="expand-icon" v-if="!!props.extraInformation?.length">
       <MoreIcon/>
@@ -63,7 +68,7 @@ const expand = ref(false);
 .main-container {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   border: 1px solid var(--color-border);
   padding: 5px 15px;
   border-radius: 5px;
@@ -76,6 +81,9 @@ const expand = ref(false);
   font-weight: 500;
   margin-bottom: 0.4rem;
   color: var(--color-heading);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 a {
@@ -89,21 +97,24 @@ a {
 }
 
 .time-container {
+  color: var(--color-text);
+
   min-width: 140px;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 
 .expanded-section {
   max-height: 0;
   overflow: hidden; /* Changed from visibility */
-  transition: max-height 0.5s;
+  transition: max-height 0.3s;
 }
 
 .expanded-section-active {
-  max-height: 400px;  /* Set an appropriate maximum height here */
+  max-height: 400px; /* Set an appropriate maximum height here */
 }
 
-p{
+p {
   margin-bottom: 5px;
-
 }
 </style>
