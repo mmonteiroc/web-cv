@@ -34,7 +34,7 @@ export const experiences = [
             "Jenkins",
             "Flutter"
         ],
-        time: "03-2020 - 06-2020",
+        time: "03 /2020 - 06 /2020",
     }
 ]
 
