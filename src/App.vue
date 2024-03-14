@@ -16,7 +16,6 @@ import ProfilePresentation from "@/components/ProfilePresentation.vue";
     <TheWelcome/>
   </main>
 
-  <a href="/assets/Miguel-Monteiro-Claveri_resume.pdf" target="_blank" class="pdf-button">Download PDF version</a>
 </template>
 
 <style scoped>
@@ -35,7 +34,7 @@ header {
 
 @media (min-width: 1026px) {
   main {
-    max-height: 850px;
+    max-height: 90vh;
     overflow-y: auto;
     overflow-x: unset;
     padding-right: 15px;

@@ -10,6 +10,7 @@ defineProps({
       IoT Software Engineer
     </h3>
     <a href="https://www.linkedin.com/in/mmonteiroc/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/mmonteiroc" target="_blank" rel="noopener">Github</a>
 
   </div>
 </template>
@@ -37,5 +38,8 @@ h3 {
   .greetings h3 {
     text-align: left;
   }
+}
+a{
+  margin-right: 5px;
 }
 </style>

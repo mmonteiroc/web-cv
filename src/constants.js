@@ -21,6 +21,7 @@ export const experiences = [
     {
         location: "Es Liceu coop - Palma de Mallorca, Spain",
         heading: "Internship - Full stack developer",
+        locationLink: "https://esliceu.cat/",
         extraInformation: [
             "Internship developing a web application for a school’s students management."
         ],
