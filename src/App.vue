@@ -38,7 +38,6 @@ header {
     max-height: 850px;
     overflow-y: auto;
     overflow-x: unset;
-    direction: rtl;
   }
 }
 

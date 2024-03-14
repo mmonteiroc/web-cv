@@ -1,8 +1,5 @@
 @import './base.css';
 
-* {
-  direction: ltr;
-}
 #app {
   max-width: 1480px;
   margin: 0 auto;
