@@ -76,6 +76,11 @@ const expand = ref(false);
   cursor: pointer;
 }
 
+.main-container:hover {
+  transition: border-color 0.3s;
+  border-color: var(--color-border-hover);
+}
+
 .heading {
   font-size: 1.1rem;
   font-weight: 500;

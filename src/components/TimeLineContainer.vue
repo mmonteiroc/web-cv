@@ -6,6 +6,8 @@
     <div class="details">
       <h3 class="heading">
         <slot name="heading"></slot>
+        <div class="top-border">&nbsp;</div>
+
       </h3>
       <slot></slot>
     </div>
@@ -13,6 +15,18 @@
 </template>
 
 <style scoped>
+
+.heading{
+  position: relative;
+}
+
+.top-border{
+  width: 0;
+  height: 2px;
+  background-color: var(--color-green);
+  transition: width 0.5s ease-in;
+}
+
 .item {
   margin-top: 2rem;
   display: flex;
@@ -48,10 +62,28 @@ h3.heading {
     padding: 0.4rem 0 1rem calc(var(--section-gap) / 2.5);
   }
 
+  .item:hover i, .item:hover .heading {
+    transition: border 0.3s, color 0.3s;
+  }
+
+  .item:hover .top-border{
+    width: 100%;
+  }
+
+  .item:hover i{
+    border: 1px solid var(--color-green);
+    color: var(--color-green);
+  }
+
+  .item:hover .heading {
+    color: var(--color-green);
+  }
+
   i {
     left: 0;
     position: absolute;
-    border: 1px solid var(--color-green);
+    border: 1px solid #898989;
+
     background: var(--color-background);
     border-radius: 8px;
     width: 50px;
@@ -76,3 +108,5 @@ h3.heading {
   }
 }
 </style>
+<script setup>
+</script>
