@@ -1,5 +1,13 @@
 @import './base.css';
+@font-face {
+  font-family: primefontlight;
+  src: url(Prime-Light.woff);
+}
 
+@font-face {
+  font-family: primefontRegular;
+  src: url(Prime-Regular.woff);
+}
 #app {
   max-width: 1480px;
   margin: 0 auto;

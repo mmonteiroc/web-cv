@@ -5,7 +5,7 @@ defineProps({
 
 <template>
   <div class="greetings">
-    <h1 class="green">Miguel Monteiro</h1>
+    <h1 class="green personal-name">Miguel Monteiro</h1>
     <h3>
       IoT Software Engineer
     </h3>
@@ -21,6 +21,8 @@ h1 {
   font-size: 2.6rem;
   position: relative;
   top: -10px;
+
+  font-family: 'primefontRegular', sans-serif;
 }
 
 h3 {
